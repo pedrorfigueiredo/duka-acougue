@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
-function App() {
+import Theme from "./components/Theme";
+import { Layout } from "./components/styles";
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
+import Main from "./pages/Main";
+import AddProduct from "./pages/AddProduct";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Theme>
+      <Router>
+        <Layout>
+          <Header />
+          <Navbar />
+          <Switch>
+            <Route path="/" exact component={Main} />
+            <Route path="/categoria/bovinos" exact component={Main} />
+            <Route path="/categoria/suinos" exact component={Main} />
+            <Route path="/categoria/aves" exact component={Main} />
+            <Route path="/categoria/bebidas" exact component={Main} />
+            <Route path="/categoria/acessorios" exact component={Main} />
+            <Route path="/sobre" exact component={Main} />
+            <Route path="/adicionar" exact component={AddProduct} />
+            <Route path="/login" exact component={Main} />
+            <Route path="/carrinho" exact component={Main} />
+            <Redirect to="/" />
+          </Switch>
+        </Layout>
+      </Router>
+    </Theme>
   );
-}
+};
 
 export default App;
