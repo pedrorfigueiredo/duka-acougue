@@ -36,7 +36,7 @@ export const Hamburger = styled.span`
 
 export const Item = styled(Logo)`
   font-size: ${(props) => props.theme.fontSizes.medium};
-  transition: 0.2s ease-in;
+  transition: 0.2s;
   :hover, &.active{
     background: ${(props) => props.theme.colors.primaryDark};
   }

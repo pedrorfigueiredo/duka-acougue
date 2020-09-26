@@ -7,7 +7,8 @@ const theme = {
     primaryLight: "#ff6659",
     primaryDark: "#9a0007",
     background: "#fafafa",
-    surface: "#eee"
+    surface: "#eee",
+    border: "#ddd"
   },
   fonts: {
     primary: "#fff",

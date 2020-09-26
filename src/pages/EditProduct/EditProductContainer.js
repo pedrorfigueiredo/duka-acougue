@@ -1,10 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import {useParams, useHistory} from 'react-router-dom';
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import AddProduct from "./AddProduct";
+import EditProduct from "./EditProduct";
 
-const AddProductContainer = () => {
-  const [status, setStatus] = useState("READY");
+const EditProductContainer = () => {
+  const [status, setStatus] = useState("LOADING");
+
+  const params = useParams();
+  const history = useHistory();
+
+  const fetchItem = useCallback(async () => {
+    setStatus("LOADING");
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/items/${params.id}`
+      );
+      if (response.status === 500) {
+        setStatus("ERROR");
+        return;
+      }
+      const data = await response.json();
+      formik.setFieldValue("name", data.name);
+      formik.setFieldValue("category", data.category);
+      formik.setFieldValue("description", data.description);
+      formik.setFieldValue("price", data.price);
+      formik.setFieldValue("unit", data.unit);
+      formik.setFieldValue("options", data.options);
+      setStatus("READY");
+    } catch (err) {
+      setStatus("ERROR");
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [params.id]);
+
+  useEffect(() => {
+    fetchItem();
+  }, [fetchItem]);
 
   const validationSchema = Yup.object().shape({
     name: Yup.string().max(50, "Nome muito grande").required("Obrigatório"),
@@ -26,6 +58,7 @@ const AddProductContainer = () => {
   const handleSubmit = async (values) => {
     setStatus('LOADING');
     const formData = new FormData();
+    formData.append("id", params.id);
     formData.append("name", formik.values.name);
     formData.append("category", formik.values.category);
     formData.append("description", formik.values.description);
@@ -34,8 +67,8 @@ const AddProductContainer = () => {
     formData.append("image", formik.values.image);
     formData.append("options", JSON.stringify(formik.values.options));
     try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/items`, {
-        method: "POST",
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/items/${params.id}`, {
+        method: "PATCH",
         body: formData,
       });
       if (response.status === 500) {
@@ -67,7 +100,7 @@ const AddProductContainer = () => {
   };
 
   const handleReturn = () => {
-    setStatus('READY');
+    history.goBack();
   }
 
   const formik = useFormik({
@@ -92,7 +125,7 @@ const AddProductContainer = () => {
   });
 
   return (
-    <AddProduct
+    <EditProduct
       values={formik.values}
       errors={formik.errors}
       touched={formik.touched}
@@ -108,4 +141,4 @@ const AddProductContainer = () => {
   );
 };
 
-export default AddProductContainer;
+export default EditProductContainer;

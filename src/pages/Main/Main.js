@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Wrapper, Header, Title, Subtitle, Error } from "./styles";
+import { Wrapper, Header, Title, Subtitle } from "./styles";
+import { Error } from "../../components/styles";
 import Loader from "../../components/Loader";
 import ItemGrid from "../../components/ItemGrid";
 
@@ -16,7 +17,7 @@ const Main = ({ status, items }) => {
         {
           LOADING: <Loader />,
           SUCCESS: <ItemGrid items={items} />,
-          FAIL: <Error>Erro no servidor. Tente novamente.</Error>,
+          FAIL: <Error>Algo deu errado. Tente novamente.</Error>,
         }[status]
       }
     </Wrapper>

@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import {Link} from 'react-router-dom';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(Link)`
   min-height: 140px;
   padding: 10px;
-  border: 1px solid ${(props) => props.theme.colors.surface};
+  border: 1px solid ${(props) => props.theme.colors.border};
   border-radius: 3px;
-  transition: 0.2s ease-in;
+  transition: 0.2s;
   cursor: pointer;
   :hover {
     border: 1px solid ${(props) => props.theme.colors.primaryLight};
@@ -29,6 +30,7 @@ export const Name = styled.span`
 export const Description = styled.span`
   font-size: 0.9em;
   margin-bottom: auto;
+  text-align: justify;
 `;
 
 export const Price = styled.span`
@@ -47,6 +49,6 @@ export const ImageContainer = styled.div`
 
 export const Image = styled.img`
   width: 100%;
-  height: auto;
+  max-height: 100%;
   border-radius: 3px;
 `;

@@ -4,7 +4,7 @@ import { Wrapper, Info, Name, Description, Price, ImageContainer, Image } from "
 
 const ItemCard = ({ item }) => {
   return (
-    <Wrapper>
+    <Wrapper to={`produto/${item._id}`}>
       <Info>
         <Name>{item.name}</Name>
         <Description>{item.description.replace(/^(.{80}[^\s]*).*/, "$1") + "..."}</Description>

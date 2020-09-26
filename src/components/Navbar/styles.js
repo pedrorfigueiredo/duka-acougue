@@ -16,7 +16,7 @@ export const Item = styled(NavLink)`
   align-items: center;
   padding: 0 20px;
   color: ${(props) => props.theme.fonts.primaryDark};
-  transition: 0.2s ease-in;
+  transition: 0.2s;
   :hover, &.active {
     background: ${(props) => props.theme.colors.primary};
   }

@@ -13,8 +13,8 @@ const spin = keyframes`
 `;
 
 export const Animation = styled.div`
-  border: 4px solid ${props => props.theme.colors.background};
-  border-top: 4px solid ${props => props.theme.colors.primary};
+  border: 4px solid ${props => props.theme.colors.surface};
+  border-top: 4px solid ${props => props.theme.colors.primaryLight};
   border-radius: 50%;
   width: 40px;
   height: 40px;

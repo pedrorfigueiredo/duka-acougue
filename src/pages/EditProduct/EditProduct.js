@@ -21,7 +21,7 @@ import {
   OptionGroup,
 } from "./styles";
 
-const AddProduct = ({
+const EditProduct = ({
   values,
   errors,
   touched,
@@ -36,7 +36,7 @@ const AddProduct = ({
 }) => {
   return (
     <Wrapper>
-      <Header>Adicionar produto à loja</Header>
+      <Header>Editar produto</Header>
       {
         {
           READY: (
@@ -157,14 +157,14 @@ const AddProduct = ({
                 </Row>
               </InputGroup>
               <Button type="submit" onClick={handleSubmit}>
-                Cadastrar
+                Atualizar
               </Button>
             </Form>
           ),
           LOADING: <Loader />,
           SUCCESS: (
             <Message handleReturn={handleReturn}>
-              Item adicionado com sucesso!
+              Item atualizado com sucesso!
             </Message>
           ),
           ERROR: <Message handleReturn={handleReturn}>Algo deu errado. Tente novamente.</Message>,
@@ -174,7 +174,7 @@ const AddProduct = ({
   );
 };
 
-AddProduct.propTypes = {
+EditProduct.propTypes = {
   values: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired,
   touched: PropTypes.object.isRequired,
@@ -188,4 +188,4 @@ AddProduct.propTypes = {
   status: PropTypes.string.isRequired,
 };
 
-export default AddProduct;
+export default EditProduct;

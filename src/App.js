@@ -12,6 +12,8 @@ import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Main from "./pages/Main";
 import AddProduct from "./pages/AddProduct";
+import EditProduct from "./pages/EditProduct";
+import Product from "./pages/Product";
 
 const App = () => {
   return (
@@ -22,15 +24,17 @@ const App = () => {
           <Navbar />
           <Switch>
             <Route path="/" exact component={Main} />
-            <Route path="/categoria/bovinos" exact component={Main} />
-            <Route path="/categoria/suinos" exact component={Main} />
-            <Route path="/categoria/aves" exact component={Main} />
-            <Route path="/categoria/bebidas" exact component={Main} />
-            <Route path="/categoria/acessorios" exact component={Main} />
-            <Route path="/sobre" exact component={Main} />
-            <Route path="/adicionar" exact component={AddProduct} />
-            <Route path="/login" exact component={Main} />
-            <Route path="/carrinho" exact component={Main} />
+            <Route path="/categoria/bovinos" component={Main} />
+            <Route path="/categoria/suinos" component={Main} />
+            <Route path="/categoria/aves" component={Main} />
+            <Route path="/categoria/bebidas" component={Main} />
+            <Route path="/categoria/acessorios" component={Main} />
+            <Route path="/produto/:id" exact component={Product} />
+            <Route path="/produto/:id/editar" component={EditProduct} />
+            <Route path="/sobre" component={Main} />
+            <Route path="/adicionar" component={AddProduct} />
+            <Route path="/login" component={Main} />
+            <Route path="/carrinho" component={Main} />
             <Redirect to="/" />
           </Switch>
         </Layout>

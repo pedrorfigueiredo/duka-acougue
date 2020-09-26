@@ -22,3 +22,5 @@ body,
   height: 100%;
   background: #fafafa;
 }
+
+a { color: inherit; } 

@@ -21,7 +21,7 @@ export const Form = styled.form`
   min-height: 700px;
   width: 400px;
   margin: 20px;
-  padding: 5px 20px;
+  padding: 10px 20px;
   border-radius: 3px;
   border: 1px solid ${(props) => props.theme.colors.border};
   display: flex;

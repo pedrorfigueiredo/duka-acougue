@@ -25,11 +25,3 @@ export const Subtitle = styled.h2`
   font-size: ${(props) => props.theme.fontSizes.large};
   text-align: center;
 `;
-
-export const Error = styled.span`
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: ${(props) => props.theme.fontSizes.medium};
-`;
