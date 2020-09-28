@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useCallback } from "react";
+import {v1 as uuid} from 'uuid';
+import {useDispatch} from 'react-redux';
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useParams, useHistory } from "react-router-dom";
+import {addOrder} from '../../store/ducks/shopCart';
 
 import Product from "./Product";
 
@@ -12,6 +15,7 @@ const ProductContainer = () => {
   const [totalPrice, setTotalPrice] = useState(0);
   const params = useParams();
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const validationSchema = Yup.object().shape({
     option: Yup.string().required("Obrigatório"),
@@ -19,7 +23,18 @@ const ProductContainer = () => {
   });
 
   const handleSubmit = (values) => {
-    alert(JSON.stringify(values, null, 2));
+    const order = {
+      id: uuid(),
+      name: item.name,
+      image: item.image.url,
+      unit: item.unit,
+      option: values.option,
+      obs: values.obs,
+      quantity: quantity,
+      totalPrice: totalPrice
+    };
+    dispatch(addOrder(order));
+    history.goBack();
   };
 
   const formik = useFormik({
@@ -37,9 +52,8 @@ const ProductContainer = () => {
       const response = await fetch(
         `${process.env.REACT_APP_BACKEND_URL}/items/${params.id}`
       );
-      if (response.status === 500) {
-        setStatus("ERROR");
-        return;
+      if (!response.ok) {
+        throw Error(response.statusText);
       }
       const data = await response.json();
       setItem(data);

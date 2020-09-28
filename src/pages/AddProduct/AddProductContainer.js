@@ -38,9 +38,8 @@ const AddProductContainer = () => {
         method: "POST",
         body: formData,
       });
-      if (response.status === 500) {
-        setStatus("ERROR");
-        return;
+      if (!response.ok) {
+        throw Error(response.statusText);
       }
       setStatus('SUCCESS');
     } catch (err) {

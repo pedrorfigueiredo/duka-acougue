@@ -37,7 +37,8 @@ export const Hamburger = styled.span`
 export const Item = styled(Logo)`
   font-size: ${(props) => props.theme.fontSizes.medium};
   transition: 0.2s;
-  :hover, &.active{
+  :hover,
+  &.active {
     background: ${(props) => props.theme.colors.primaryDark};
   }
   @media (max-width: 768px) {
@@ -46,7 +47,26 @@ export const Item = styled(Logo)`
 `;
 
 export const Cart = styled(Item)`
+  position: relative;
   @media (max-width: 768px) {
     display: flex;
   }
+`;
+
+export const Counter = styled.span`
+  position: absolute;
+  z-index: 5;
+  bottom: 5px;
+  right: 10px;
+  background: ${props => props.theme.colors.surface};
+  color: black;
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  font-size: 0.8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  border: 1px solid ${props => props.theme.colors.primaryLight};
 `;

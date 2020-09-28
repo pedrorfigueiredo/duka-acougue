@@ -11,9 +11,8 @@ const MainContainer = () => {
       const response = await fetch(
         `${process.env.REACT_APP_BACKEND_URL}/items`
       );
-      if (response.status === 500) {
-        setStatus("FAIL");
-        return;
+      if (!response.ok) {
+        throw Error(response.statusText);
       }
       const data = await response.json();
       setItems(data);

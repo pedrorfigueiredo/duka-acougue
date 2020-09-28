@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import Loader from "../../components/Loader";
 import Counter from "./Counter";
 import { Error } from "../../components/styles";
+import {BsArrowReturnLeft} from 'react-icons/bs';
+import {RiDeleteBinLine, RiEdit2Line} from 'react-icons/ri';
+
 import {
   Wrapper,
   Card,
@@ -48,9 +51,9 @@ const Product = ({
           SUCCESS: item && (
             <Card>
               <Header>
-                <ReturnButton onClick={handleReturn} >Voltar</ReturnButton>
-                <IconHandler to={`/produto/${item._id}/editar`}>Editar</IconHandler>
-                <DeleteButton onClick={handleDelete} >Deletar</DeleteButton>
+                <ReturnButton onClick={handleReturn} ><BsArrowReturnLeft/></ReturnButton>
+                <IconHandler to={`/produto/${item._id}/editar`}><RiEdit2Line/></IconHandler>
+                <DeleteButton onClick={handleDelete} ><RiDeleteBinLine/></DeleteButton>
               </Header>
               <Main>
                 <Image src={item.image.url}></Image>

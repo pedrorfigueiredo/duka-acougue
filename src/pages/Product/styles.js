@@ -41,6 +41,7 @@ export const IconHandler = styled(Link)`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  font-size: 1.4em;
 `;
 
 export const Main = styled.div`
@@ -142,9 +143,11 @@ export const DeleteButton = styled.button`
   cursor: pointer;
   background: inherit;
   font-size: ${props => props.theme.fontSizes.medium};
+  font-size: 1.4em;
 `;
 
 export const ReturnButton = styled(DeleteButton)`
   margin-left: 0;
   margin-right: 20px;
+  font-size: 1.4em;
 `;

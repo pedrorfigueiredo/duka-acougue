@@ -14,6 +14,7 @@ import Main from "./pages/Main";
 import AddProduct from "./pages/AddProduct";
 import EditProduct from "./pages/EditProduct";
 import Product from "./pages/Product";
+import ShopCart from "./pages/ShopCart";
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
             <Route path="/categoria/acessorios" component={Main} />
             <Route path="/produto/:id" exact component={Product} />
             <Route path="/produto/:id/editar" component={EditProduct} />
+            <Route path="/carrinho" component={ShopCart} />
             <Route path="/sobre" component={Main} />
             <Route path="/adicionar" component={AddProduct} />
             <Route path="/login" component={Main} />

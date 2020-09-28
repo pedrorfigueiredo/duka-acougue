@@ -16,9 +16,8 @@ const EditProductContainer = () => {
       const response = await fetch(
         `${process.env.REACT_APP_BACKEND_URL}/items/${params.id}`
       );
-      if (response.status === 500) {
-        setStatus("ERROR");
-        return;
+      if (!response.ok) {
+        throw Error(response.statusText);
       }
       const data = await response.json();
       formik.setFieldValue("name", data.name);
@@ -71,9 +70,8 @@ const EditProductContainer = () => {
         method: "PATCH",
         body: formData,
       });
-      if (response.status === 500) {
-        setStatus("ERROR");
-        return;
+      if (!response.ok) {
+        throw Error(response.statusText);
       }
       setStatus('SUCCESS');
     } catch (err) {
