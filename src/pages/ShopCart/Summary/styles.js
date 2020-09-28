@@ -18,12 +18,14 @@ export const Title = styled.h2`
   justify-content: center;
   padding: 10px;
   font-size: ${(props) => props.theme.fontSizes.large};
+  margin-bottom: 20px;
 `;
 
 export const Row = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 `;
 
 export const Label = styled.div``;

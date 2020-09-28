@@ -1,5 +1,8 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import { Link } from "react-router-dom";
+import {fadeIn} from 'react-animations';
+
+const fadeInAnimation = keyframes`${fadeIn}`;
 
 export const Wrapper = styled.div`
   flex: 1;
@@ -8,6 +11,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Card = styled.div`
+  animation: 0.5s ${fadeInAnimation};
   align-self: flex-start;
   width: 800px;
   margin: 20px 0;

@@ -1,4 +1,7 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
+import {fadeIn} from 'react-animations';
+
+const fadeInAnimation = keyframes`${fadeIn}`;
 
 export const Wrapper = styled.div`
   flex: 1;
@@ -17,6 +20,7 @@ export const Header = styled.div`
 `;
 
 export const Form = styled.form`
+  animation: 0.5s ${fadeInAnimation};
   align-self: center;
   min-height: 700px;
   width: 400px;

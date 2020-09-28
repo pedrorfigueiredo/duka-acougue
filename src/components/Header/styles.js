@@ -8,7 +8,7 @@ export const Wrapper = styled.nav`
   min-height: 50px;
   background: ${(props) => props.theme.colors.primary};
   @media (max-width: 768px) {
-    padding: 0 5%;
+    padding: 0 2%;
   }
 `;
 
@@ -29,6 +29,8 @@ export const Hamburger = styled.span`
   align-items: center;
   cursor: pointer;
   color: ${(props) => props.theme.fonts.primary};
+  font-size: 1.6em;
+  padding: 10px 20px;
   @media (max-width: 768px) {
     display: flex;
   }

@@ -10,14 +10,15 @@ import {
   Counter,
 } from "./styles";
 import { BiCart } from "react-icons/bi";
+import { FiMenu } from "react-icons/fi";
 
-const Header = () => {
+const Header = ({handleOpenSidebar}) => {
   const orders = useSelector((state) => state.shopCart.orders);
 
   return (
     <Wrapper>
       <ItemList>
-        <Hamburger>Menu</Hamburger>
+        <Hamburger onClick={handleOpenSidebar} ><FiMenu/></Hamburger>
         <Logo to="/">Só Carnes Silva</Logo>
       </ItemList>
       <ItemList>
