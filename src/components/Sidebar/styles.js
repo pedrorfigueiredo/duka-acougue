@@ -13,6 +13,7 @@ const slideInFromLeft = keyframes`
 `;
 
 export const Nav = styled.div`
+  z-index: 10;
   position: fixed;
   top: 0;
   left: 0;
@@ -44,11 +45,11 @@ export const Item = styled(Link)`
 `;
 
 export const Panel = styled.div`
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   height: 100vh;
   width: 100vw;
-
+  z-index: 8;
   background: rgba(100, 100, 100, 0.8);
 `;
