@@ -33,9 +33,18 @@ export const Label = styled.div`
   font-size: ${(props) => props.theme.fontSizes.huge};
 `;
 
+export const MiniLabel = styled(Label)`
+  font-size: ${(props) => props.theme.fontSizes.medium};
+`;
+
 export const Price = styled.div`
   font-size: ${(props) => props.theme.fontSizes.huge};
   color: ${(props) => props.theme.fonts.price};
+`;
+
+export const MiniPrice = styled(Price)`
+  font-size: ${(props) => props.theme.fontSizes.medium};
+  color: ${(props) => props.theme.fonts.primaryLight};
 `;
 
 export const Button = styled.button`

@@ -30,7 +30,7 @@ export const Name = styled.span`
 export const Description = styled.span`
   font-size: 0.9em;
   margin-bottom: auto;
-  text-align: justify;
+  /* text-align: justify; */
 `;
 
 export const Price = styled.span`
