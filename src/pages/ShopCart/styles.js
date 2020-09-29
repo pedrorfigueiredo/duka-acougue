@@ -8,8 +8,10 @@ export const Wrapper = styled.div`
 
 export const Grid = styled.div`
   display: flex;
-  padding: 20px 4%;
+  align-items: flex-start;
+  padding: 20px 8%;
   @media (max-width: 768px) {
     flex-direction: column;
+    padding: 20px 4%;
   }
 `;

@@ -10,7 +10,7 @@ const ShopCart = ({ orders, handleRemoveOrder, semiTotal }) => {
       {orders.length > 0 ? (
         <Grid>
           <OrderList orders={orders} handleRemoveOrder={handleRemoveOrder} />
-          <Summary semiTotal={semiTotal}/>
+          <Summary semiTotal={semiTotal} orders={orders} />
         </Grid>
       ) : (
         <Error>Seu carrinho está vazio.</Error>

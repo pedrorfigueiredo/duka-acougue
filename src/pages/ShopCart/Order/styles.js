@@ -1,15 +1,24 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  display: flex;
+  display: grid;
+  grid-template: 
+    "image name option quantity price" 1fr 
+    / 200px 3fr 2fr 2fr 2fr;
   border: 1px solid ${(props) => props.theme.colors.border};
   border-radius: 3px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   position: relative;
+  @media(max-width: 768px) {
+    grid-template: 
+    "image name name" 2fr
+    "option quantity price" 1fr
+    / 1fr 1fr 1fr; 
+  };
 `;
 
 export const RemoveButton = styled.div`
-  background: ${props => props.theme.colors.surface};
+  background: ${(props) => props.theme.colors.surface};
   font-size: 1.4em;
   width: 30px;
   height: 30px;
@@ -21,34 +30,32 @@ export const RemoveButton = styled.div`
   align-items: center;
   cursor: pointer;
   border-radius: 0 3px 3px 0;
-  border: 1px solid ${props => props.theme.colors.primaryLight};
+  border: 1px solid ${(props) => props.theme.colors.primaryLight};
   transition: 0.2s;
   :hover {
-    background: ${props => props.theme.colors.primaryLight};
+    background: ${(props) => props.theme.colors.primaryLight};
   }
 `;
 
 export const Image = styled.img`
+  grid-area: image;
   width: 200px;
-  height: 100%;
-  @media (max-width: 768px) {
-    width: 150px;
-  } ;
+  height: auto;
 `;
 
 export const Name = styled.div`
+  grid-area: name;
   font-size: ${(props) => props.theme.fontSizes.large};
-  flex: 3;
   display: flex;
   padding: 10px;
   align-items: center;
   @media (max-width: 768px) {
-    flex: 2;
+    border-bottom: 1px solid ${props => props.theme.colors.border};
   } ;
 `;
 
 export const Option = styled.div`
-  flex: 2;
+  grid-area: option;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,8 +63,11 @@ export const Option = styled.div`
   text-align: center;
 `;
 
-export const Quantity = styled(Option)``;
+export const Quantity = styled(Option)`
+  grid-area: quantity;
+`;
 
 export const Price = styled(Quantity)`
+  grid-area: price;
   color: ${(props) => props.theme.fonts.price};
 `;
