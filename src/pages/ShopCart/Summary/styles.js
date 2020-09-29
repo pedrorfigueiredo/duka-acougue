@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  flex: 0 0 350px;
+  width: 350px;
   border: 1px solid ${(props) => props.theme.colors.border};
   padding: 5px;
   margin-left: 10px;
   @media (max-width: 768px) {
     margin-left: 0;
+    width: 95%;
   }
   display: flex;
   flex-direction: column;
-  background: ${props => props.theme.colors.surface};
+  background: ${(props) => props.theme.colors.surface};
 `;
 
 export const Title = styled.h2`
@@ -28,7 +29,9 @@ export const Row = styled.div`
   margin-bottom: 20px;
 `;
 
-export const Label = styled.div``;
+export const Label = styled.div`
+  font-size: ${(props) => props.theme.fontSizes.huge};
+`;
 
 export const Price = styled.div`
   font-size: ${(props) => props.theme.fontSizes.huge};
