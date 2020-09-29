@@ -39,7 +39,7 @@ export const RemoveButton = styled.div`
 
 export const Image = styled.img`
   grid-area: image;
-  width: 200px;
+  width: 100%;
   height: auto;
 `;
 
