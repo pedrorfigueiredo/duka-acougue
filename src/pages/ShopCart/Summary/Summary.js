@@ -10,7 +10,7 @@ import {
   MiniPrice
 } from "./styles";
 
-const Summary = ({ semiTotal, orders, tax }) => {
+const Summary = ({ semiTotal, orders, tax, total }) => {
   return (
     <Wrapper>
       <Title>Resumo do Pedido</Title>
@@ -28,7 +28,7 @@ const Summary = ({ semiTotal, orders, tax }) => {
       </Row>
       <Row>
         <Label>Total</Label>
-        <Price>R$ {(semiTotal + tax).toFixed(2) }</Price>
+        <Price>R$ {(semiTotal + total).toFixed(2) }</Price>
       </Row>
       <Button>Continuar</Button>
     </Wrapper>

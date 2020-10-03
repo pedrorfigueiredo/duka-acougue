@@ -8,7 +8,8 @@ export const Types = {
 const initialState = {
   orders: [],
   semiTotal: 0,
-  tax: 5
+  tax: 5,
+  total: 0
 };
 
 const reducer = (state = initialState, action) => {
@@ -18,7 +19,7 @@ const reducer = (state = initialState, action) => {
     case Types.ADD_ORDER:
       newOrders = [...state.orders, action.payload.order];
       newSemiTotal = state.semiTotal + action.payload.order.totalPrice;
-      return { ...state, orders: newOrders, semiTotal: newSemiTotal};
+      return { ...state, orders: newOrders, semiTotal: newSemiTotal, total: newSemiTotal + state.tax};
 
     case Types.REMOVE_ORDER:
       const index = state.orders.findIndex(
@@ -29,7 +30,7 @@ const reducer = (state = initialState, action) => {
         ...state.orders.slice(index + 1, state.orders.length),
       ];
       newSemiTotal = state.semiTotal - state.orders[index].totalPrice;
-      return { ...state, orders: newOrders, semiTotal: newSemiTotal};
+      return { ...state, orders: newOrders, semiTotal: newSemiTotal, total: newSemiTotal + state.tax}; 
 
     default:
       return state;
