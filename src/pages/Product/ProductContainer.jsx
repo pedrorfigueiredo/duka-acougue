@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useCallback } from "react";
-import {v1 as uuid} from 'uuid';
-import {useDispatch} from 'react-redux';
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import { useParams, useHistory } from "react-router-dom";
-import {addOrder} from '../../store/ducks/shopCart';
+import React, { useState, useEffect, useCallback } from 'react';
+import { v1 as uuid } from 'uuid';
+import { useDispatch } from 'react-redux';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import { useParams, useHistory } from 'react-router-dom';
+import { addOrder } from '../../store/ducks/shopCart';
 
-import Product from "./Product";
+import Product from './Product';
 
 const ProductContainer = () => {
   const [item, setItem] = useState(null);
-  const [status, setStatus] = useState("READY");
+  const [status, setStatus] = useState('READY');
   const [quantity, setQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
   const params = useParams();
@@ -18,8 +18,8 @@ const ProductContainer = () => {
   const dispatch = useDispatch();
 
   const validationSchema = Yup.object().shape({
-    option: Yup.string().required("Obrigatório"),
-    obs: Yup.string().max(300, "Uso máximo de 300 caracteres"),
+    option: Yup.string().required('Obrigatório'),
+    obs: Yup.string().max(300, 'Uso máximo de 300 caracteres'),
   });
 
   const handleSubmit = (values) => {
@@ -30,8 +30,8 @@ const ProductContainer = () => {
       unit: item.unit,
       option: values.option,
       obs: values.obs,
-      quantity: quantity,
-      totalPrice: totalPrice
+      quantity,
+      totalPrice,
     };
     dispatch(addOrder(order));
     history.goBack();
@@ -39,15 +39,15 @@ const ProductContainer = () => {
 
   const formik = useFormik({
     initialValues: {
-      option: "",
-      obs: "",
+      option: '',
+      obs: '',
     },
     validationSchema,
     onSubmit: handleSubmit,
   });
 
   const fetchItem = useCallback(async () => {
-    setStatus("LOADING");
+    setStatus('LOADING');
     try {
       const response = await fetch(
         `${process.env.REACT_APP_BACKEND_URL}/items/${params.id}`
@@ -57,9 +57,9 @@ const ProductContainer = () => {
       }
       const data = await response.json();
       setItem(data);
-      setStatus("SUCCESS");
+      setStatus('SUCCESS');
     } catch (err) {
-      setStatus("ERROR");
+      setStatus('ERROR');
     }
   }, [params.id]);
 
@@ -77,18 +77,18 @@ const ProductContainer = () => {
 
   const handleQuantity = (action) => {
     let stepSize;
-    if (item.unit === "un") {
+    if (item.unit === 'un') {
       stepSize = 1;
     } else {
       stepSize = 0.5;
     }
     switch (action) {
-      case "add":
+      case 'add':
         setQuantity((prevQuantity) => {
           return prevQuantity + stepSize;
         });
         break;
-      case "subtract":
+      case 'subtract':
         setQuantity((prevQuantity) => {
           if (prevQuantity <= 1) {
             return prevQuantity;
@@ -97,15 +97,14 @@ const ProductContainer = () => {
         });
         break;
       default:
-        return;
     }
   };
 
   const handleDelete = async () => {
     try {
-      setStatus("LOADING");
+      setStatus('LOADING');
       await fetch(`${process.env.REACT_APP_BACKEND_URL}/items/${params.id}`, {
-        method: "DELETE",
+        method: 'DELETE',
       });
       history.goBack();
     } catch (err) {
@@ -115,7 +114,7 @@ const ProductContainer = () => {
 
   const handleReturn = () => {
     history.goBack();
-  }
+  };
 
   return (
     <Product

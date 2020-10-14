@@ -16,5 +16,5 @@ export const Error = styled.span`
   justify-content: center;
   align-items: center;
   font-size: ${(props) => props.theme.fontSizes.huge};
-  color: ${props => props.theme.fonts.error};
+  color: ${(props) => props.theme.fonts.error};
 `;

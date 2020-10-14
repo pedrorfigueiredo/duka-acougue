@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import {
   Wrapper,
@@ -7,10 +7,10 @@ import {
   Title,
   Paragraph,
   Image,
-} from "./styles";
+} from './styles';
 
-import front from "../../assets/front.jpeg";
-import front2 from "../../assets/front2.jpg";
+import front from '../../assets/front.jpeg';
+import front2 from '../../assets/front2.jpg';
 
 const About = () => {
   return (
@@ -43,7 +43,7 @@ const About = () => {
           ullamcorper eget nulla. Malesuada fames ac turpis egestas maecenas
           pharetra convallis posuere morbi. Semper viverra nam libero justo
           laoreet sit amet cursus sit. Pulvinar etiam non quam lacus suspendisse
-          faucibus. Sapien et ligula ullamcorper malesuada proin libero nunc.{" "}
+          faucibus. Sapien et ligula ullamcorper malesuada proin libero nunc.{' '}
         </Paragraph>
         <Paragraph>
           Amet nulla facilisi morbi tempus. Id aliquet lectus proin nibh nisl

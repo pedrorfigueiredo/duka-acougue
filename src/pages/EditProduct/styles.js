@@ -1,5 +1,5 @@
-import styled, {keyframes} from "styled-components";
-import {fadeIn} from 'react-animations';
+import styled, { keyframes } from 'styled-components';
+import { fadeIn } from 'react-animations';
 
 const fadeInAnimation = keyframes`${fadeIn}`;
 
@@ -101,9 +101,9 @@ export const FileMessage = styled.span`
   align-items: center;
   font-size: ${(props) => props.theme.fontSizes.small};
   padding: 5px;
-  border-top: 1px solid #EBE9ED;
-  border-left: 1px solid #EBE9ED;
-  border-bottom: 1px solid #EBE9ED;
+  border-top: 1px solid #ebe9ed;
+  border-left: 1px solid #ebe9ed;
+  border-bottom: 1px solid #ebe9ed;
 `;
 
 export const UploadButton = styled.label`

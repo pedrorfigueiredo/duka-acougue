@@ -1,8 +1,9 @@
-import styled, {keyframes} from "styled-components";
-import {fadeIn} from 'react-animations';
+import styled, { keyframes } from 'styled-components';
+import { fadeIn } from 'react-animations';
 
 const fadeInAnimation = keyframes`${fadeIn}`;
 
+// eslint-disable-next-line import/prefer-default-export
 export const Wrapper = styled.div`
   display: grid;
   padding: 30px 50px;
@@ -12,5 +13,5 @@ export const Wrapper = styled.div`
     grid-template-columns: 1fr;
     padding: 30px 20px;
   }
-  animation: 0.5s ${fadeInAnimation}
+  animation: 0.5s ${fadeInAnimation};
 `;

@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Loader from "../../components/Loader";
-import Counter from "./Counter";
-import { Error } from "../../components/styles";
-import {BsArrowReturnLeft} from 'react-icons/bs';
-import {RiDeleteBinLine, RiEdit2Line} from 'react-icons/ri';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { BsArrowReturnLeft } from 'react-icons/bs';
+import { RiDeleteBinLine, RiEdit2Line } from 'react-icons/ri';
+import Loader from '../../components/Loader';
+import Counter from './Counter';
+import { Error } from '../../components/styles';
 
 import {
   Wrapper,
@@ -24,8 +24,8 @@ import {
   Button,
   TotalPrice,
   DeleteButton,
-  ReturnButton
-} from "./styles";
+  ReturnButton,
+} from './styles';
 
 const Product = ({
   item,
@@ -40,7 +40,7 @@ const Product = ({
   handleQuantity,
   totalPrice,
   handleDelete,
-  handleReturn
+  handleReturn,
 }) => {
   return (
     <Wrapper>
@@ -51,12 +51,18 @@ const Product = ({
           SUCCESS: item && (
             <Card>
               <Header>
-                <ReturnButton onClick={handleReturn} ><BsArrowReturnLeft/></ReturnButton>
-                <IconHandler to={`/produto/${item._id}/editar`}><RiEdit2Line/></IconHandler>
-                <DeleteButton onClick={handleDelete} ><RiDeleteBinLine/></DeleteButton>
+                <ReturnButton onClick={handleReturn}>
+                  <BsArrowReturnLeft />
+                </ReturnButton>
+                <IconHandler to={`/produto/${item._id}/editar`}>
+                  <RiEdit2Line />
+                </IconHandler>
+                <DeleteButton onClick={handleDelete}>
+                  <RiDeleteBinLine />
+                </DeleteButton>
               </Header>
               <Main>
-                <Image src={item.image.url}></Image>
+                <Image src={item.image.url} />
                 <Title>{item.name}</Title>
                 <Description>{item.description}</Description>
               </Main>
@@ -94,7 +100,7 @@ const Product = ({
                   value={values.obs}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                ></TextArea>
+                />
                 {errors.obs && touched.obs && (
                   <InputError>{errors.obs}</InputError>
                 )}
@@ -123,7 +129,7 @@ Product.propTypes = {
   handleQuantity: PropTypes.func.isRequired,
   totalPrice: PropTypes.number.isRequired,
   handleDelete: PropTypes.func.isRequired,
-  handleReturn: PropTypes.func.isRequired
+  handleReturn: PropTypes.func.isRequired,
 };
 
 export default Product;

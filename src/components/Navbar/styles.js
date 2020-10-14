@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -17,7 +17,8 @@ export const Item = styled(NavLink)`
   padding: 0 20px;
   color: ${(props) => props.theme.fonts.primaryDark};
   transition: 0.2s;
-  :hover, &.active {
+  :hover,
+  &.active {
     background: ${(props) => props.theme.colors.primary};
   }
 `;

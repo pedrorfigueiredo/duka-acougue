@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Wrapper,
   Title,
@@ -7,8 +7,8 @@ import {
   Price,
   Button,
   Items,
-  MiniPrice
-} from "./styles";
+  MiniPrice,
+} from './styles';
 
 const Summary = ({ semiTotal, orders, tax, total }) => {
   return (
@@ -28,7 +28,7 @@ const Summary = ({ semiTotal, orders, tax, total }) => {
       </Row>
       <Row>
         <Label>Total</Label>
-        <Price>R$ {(semiTotal + total).toFixed(2) }</Price>
+        <Price>R$ {(semiTotal + total).toFixed(2)}</Price>
       </Row>
       <Button>Continuar</Button>
     </Wrapper>

@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Wrapper, Header, Title } from "./styles";
-import { Error } from "../../components/styles";
-import Loader from "../../components/Loader";
-import ItemGrid from "../../components/ItemGrid";
+import { Wrapper, Header, Title } from './styles';
+import { Error } from '../../components/styles';
+import Loader from '../../components/Loader';
+import ItemGrid from '../../components/ItemGrid';
 
 const Category = ({ status, items, title }) => {
   return (

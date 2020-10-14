@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const Wrapper = styled.nav`
   display: flex;
@@ -60,7 +60,7 @@ export const Counter = styled.span`
   z-index: 5;
   bottom: 5px;
   right: 10px;
-  background: ${props => props.theme.colors.surface};
+  background: ${(props) => props.theme.colors.surface};
   color: black;
   width: 18px;
   height: 18px;
@@ -70,5 +70,5 @@ export const Counter = styled.span`
   justify-content: center;
   align-items: center;
   font-weight: 700;
-  border: 1px solid ${props => props.theme.colors.primaryLight};
+  border: 1px solid ${(props) => props.theme.colors.primaryLight};
 `;

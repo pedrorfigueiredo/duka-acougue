@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Loader from "../../components/Loader";
-import Message from "./Message";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Loader from '../../components/Loader';
+import Message from './Message';
 import {
   Wrapper,
   Header,
@@ -19,7 +19,7 @@ import {
   OptionInput,
   OptionButton,
   OptionGroup,
-} from "./styles";
+} from './styles';
 
 const EditProduct = ({
   values,
@@ -122,7 +122,7 @@ const EditProduct = ({
                     type="file"
                     onChange={handleImageChange}
                     onBlur={handleBlur}
-                    style={{ display: "none" }}
+                    style={{ display: 'none' }}
                   />
                 </Row>
                 <Error>{touched.image && errors.image}</Error>
@@ -167,7 +167,11 @@ const EditProduct = ({
               Item atualizado com sucesso!
             </Message>
           ),
-          ERROR: <Message handleReturn={handleReturn}>Algo deu errado. Tente novamente.</Message>,
+          ERROR: (
+            <Message handleReturn={handleReturn}>
+              Algo deu errado. Tente novamente.
+            </Message>
+          ),
         }[status]
       }
     </Wrapper>

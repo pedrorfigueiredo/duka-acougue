@@ -1,20 +1,20 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: grid;
-  grid-template: 
-    "image name option quantity price" 1fr 
+  grid-template:
+    'image name option quantity price' 1fr
     / 200px 3fr 2fr 2fr 2fr;
   border: 1px solid ${(props) => props.theme.colors.border};
   border-radius: 3px;
   margin-bottom: 10px;
   position: relative;
-  @media(max-width: 768px) {
-    grid-template: 
-    "image name name" 2fr
-    "option quantity price" 1fr
-    / 1fr 1fr 1fr; 
-  };
+  @media (max-width: 768px) {
+    grid-template:
+      'image name name' 2fr
+      'option quantity price' 1fr
+      / 1fr 1fr 1fr;
+  } ;
 `;
 
 export const RemoveButton = styled.div`
@@ -50,7 +50,7 @@ export const Name = styled.div`
   padding: 10px;
   align-items: center;
   @media (max-width: 768px) {
-    border-bottom: 1px solid ${props => props.theme.colors.border};
+    border-bottom: 1px solid ${(props) => props.theme.colors.border};
   } ;
 `;
 

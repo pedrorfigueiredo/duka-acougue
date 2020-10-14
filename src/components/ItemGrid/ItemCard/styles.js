@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {Link} from 'react-router-dom';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Wrapper = styled(Link)`
   min-height: 140px;

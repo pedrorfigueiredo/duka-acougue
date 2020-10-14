@@ -1,8 +1,8 @@
-import React from "react";
-import OrderList from "./OrderList";
-import Summary from "./Summary";
-import { Error } from "../../components/styles";
-import { Wrapper, Grid } from "./styles";
+import React from 'react';
+import OrderList from './OrderList';
+import Summary from './Summary';
+import { Error } from '../../components/styles';
+import { Wrapper, Grid } from './styles';
 
 const ShopCart = ({ orders, handleRemoveOrder, semiTotal, tax, total }) => {
   return (
@@ -10,7 +10,12 @@ const ShopCart = ({ orders, handleRemoveOrder, semiTotal, tax, total }) => {
       {orders.length > 0 ? (
         <Grid>
           <OrderList orders={orders} handleRemoveOrder={handleRemoveOrder} />
-          <Summary semiTotal={semiTotal} orders={orders} tax={tax} total={total}/>
+          <Summary
+            semiTotal={semiTotal}
+            orders={orders}
+            tax={tax}
+            total={total}
+          />
         </Grid>
       ) : (
         <Error>Seu carrinho está vazio.</Error>

@@ -1,4 +1,4 @@
-import styled, {keyframes} from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Wrapper = styled.div`
   flex: 1;
@@ -13,10 +13,10 @@ const spin = keyframes`
 `;
 
 export const Animation = styled.div`
-  border: 4px solid ${props => props.theme.colors.surface};
-  border-top: 4px solid ${props => props.theme.colors.primaryLight};
+  border: 4px solid ${(props) => props.theme.colors.surface};
+  border-top: 4px solid ${(props) => props.theme.colors.primaryLight};
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  animation: ${spin} 1.0s linear infinite;
+  animation: ${spin} 1s linear infinite;
 `;

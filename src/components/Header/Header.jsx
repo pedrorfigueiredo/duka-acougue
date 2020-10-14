@@ -1,5 +1,7 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { BiCart } from 'react-icons/bi';
+import { FiMenu } from 'react-icons/fi';
 import {
   Wrapper,
   Logo,
@@ -8,17 +10,17 @@ import {
   Item,
   Cart,
   Counter,
-} from "./styles";
-import { BiCart } from "react-icons/bi";
-import { FiMenu } from "react-icons/fi";
+} from './styles';
 
-const Header = ({handleOpenSidebar}) => {
+const Header = ({ handleOpenSidebar }) => {
   const orders = useSelector((state) => state.shopCart.orders);
 
   return (
     <Wrapper>
       <ItemList>
-        <Hamburger onClick={handleOpenSidebar} ><FiMenu/></Hamburger>
+        <Hamburger onClick={handleOpenSidebar}>
+          <FiMenu />
+        </Hamburger>
         <Logo to="/">Só Carnes Silva</Logo>
       </ItemList>
       <ItemList>
@@ -26,7 +28,7 @@ const Header = ({handleOpenSidebar}) => {
         <Item to="/adicionar">Adicionar produto</Item>
         <Item to="/login">Login</Item>
         <Cart to="/carrinho">
-          <BiCart style={{ fontSize: "1.5em" }} />
+          <BiCart style={{ fontSize: '1.5em' }} />
           {orders.length > 0 && <Counter>{orders.length}</Counter>}
         </Cart>
       </ItemList>

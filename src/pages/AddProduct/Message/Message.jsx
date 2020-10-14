@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Wrapper, Card, Text, Button } from "./styles";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Wrapper, Card, Text, Button } from './styles';
 
 const Message = ({ children, handleReturn }) => {
   return (

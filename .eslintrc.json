@@ -1,4 +1,7 @@
 {
+  "env": {
+    "jest/globals": true
+  },
   "extends": [
     "airbnb",
     "airbnb/hooks",
@@ -6,7 +9,8 @@
     "prettier/react"
   ],
   "plugins": [
-    "prettier"
+    "prettier",
+    "jest"
   ],
   "rules": {
     "prettier/prettier": "error"

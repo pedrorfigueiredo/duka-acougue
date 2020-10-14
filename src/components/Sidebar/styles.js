@@ -1,5 +1,5 @@
-import styled, { keyframes } from "styled-components";
-import { Link } from "react-router-dom";
+import styled, { keyframes } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.div`
   @media (min-width: 768px) {
@@ -19,7 +19,7 @@ export const Nav = styled.div`
   left: 0;
   height: 100vh;
   width: 60%;
-  background: ${props => props.theme.colors.primaryLight};
+  background: ${(props) => props.theme.colors.primaryLight};
   display: flex;
   flex-direction: column;
   padding: 30px 0;
@@ -28,20 +28,20 @@ export const Nav = styled.div`
 
 export const HeadItem = styled(Link)`
   font-size: 1.2em;
-  color: ${props => props.theme.fonts.primaryDark};
-  background: ${props => props.theme.colors.primary};
+  color: ${(props) => props.theme.fonts.primaryDark};
+  background: ${(props) => props.theme.colors.primary};
   display: flex;
   justify-content: center;
   padding: 10px 0;
-  border-bottom: 1px solid ${props => props.theme.colors.primaryLight};
+  border-bottom: 1px solid ${(props) => props.theme.colors.primaryLight};
 `;
 
 export const Item = styled(Link)`
   display: flex;
   padding: 20px 10px;
-  color: ${props => props.theme.fonts.primary};
-  background: ${props => props.theme.colors.primary};
-  border-bottom: 1px solid ${props => props.theme.colors.primaryLight};
+  color: ${(props) => props.theme.fonts.primary};
+  background: ${(props) => props.theme.colors.primary};
+  border-bottom: 1px solid ${(props) => props.theme.colors.primaryLight};
 `;
 
 export const Panel = styled.div`

@@ -1,6 +1,6 @@
-import styled, {keyframes} from "styled-components";
-import { Link } from "react-router-dom";
-import {fadeIn} from 'react-animations';
+import styled, { keyframes } from 'styled-components';
+import { Link } from 'react-router-dom';
+import { fadeIn } from 'react-animations';
 
 const fadeInAnimation = keyframes`${fadeIn}`;
 
@@ -17,15 +17,15 @@ export const Card = styled.div`
   margin: 20px 0;
   display: grid;
   grid-template:
-    "header header" 50px
-    "main form" 1fr
+    'header header' 50px
+    'main form' 1fr
     / 4fr 5fr;
   grid-column-gap: 10px;
   @media (max-width: 768px) {
     grid-template:
-      "header" 50px
-      "main" auto
-      "form" 1fr
+      'header' 50px
+      'main' auto
+      'form' 1fr
       / 1fr;
     padding: 5%;
     margin: 0;
@@ -73,7 +73,7 @@ export const Image = styled.img`
 `;
 
 export const Form = styled.form`
-  grid-area: "form";
+  grid-area: 'form';
   border: 1px solid ${(props) => props.theme.colors.border};
   display: flex;
   flex-direction: column;
@@ -82,7 +82,7 @@ export const Form = styled.form`
 export const SubTitle = styled.span`
   font-size: ${(props) => props.theme.fontSizes.large};
   background: ${(props) => props.theme.colors.surface};
-  color: ${props => props.theme.fonts.primaryLight};
+  color: ${(props) => props.theme.fonts.primaryLight};
   padding: 15px;
   display: flex;
   justify-content: center;
@@ -134,9 +134,7 @@ export const Button = styled.button`
   justify-content: space-around;
 `;
 
-export const TotalPrice = styled.span`
-
-`;
+export const TotalPrice = styled.span``;
 
 export const DeleteButton = styled.button`
   margin-left: auto;
@@ -146,7 +144,7 @@ export const DeleteButton = styled.button`
   align-items: center;
   cursor: pointer;
   background: inherit;
-  font-size: ${props => props.theme.fontSizes.medium};
+  font-size: ${(props) => props.theme.fontSizes.medium};
   font-size: 1.4em;
 `;
 

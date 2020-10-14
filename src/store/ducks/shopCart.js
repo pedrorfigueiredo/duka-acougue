@@ -26,7 +26,7 @@ const reducer = (state = initialState, action) => {
         total: newSemiTotal + state.tax,
       };
 
-    case Types.REMOVE_ORDER:
+    case Types.REMOVE_ORDER: {
       const index = state.orders.findIndex(
         (order) => order.id === action.payload.orderId
       );
@@ -41,6 +41,7 @@ const reducer = (state = initialState, action) => {
         semiTotal: newSemiTotal,
         total: newSemiTotal + state.tax,
       };
+    }
 
     default:
       return state;

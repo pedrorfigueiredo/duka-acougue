@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   flex-grow: 1;
@@ -37,7 +37,7 @@ export const TextSection = styled.div`
 
 export const Title = styled.h1`
   margin-bottom: 10px;
-  color: ${props => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.primary};
 `;
 
 export const Paragraph = styled.div`

@@ -1,11 +1,21 @@
-import React from "react";
-import { Wrapper, RemoveButton, Image, Name, Quantity, Price, Option } from "./styles";
-import {RiDeleteBinLine} from 'react-icons/ri';
+import React from 'react';
+import { RiDeleteBinLine } from 'react-icons/ri';
+import {
+  Wrapper,
+  RemoveButton,
+  Image,
+  Name,
+  Quantity,
+  Price,
+  Option,
+} from './styles';
 
 const Order = ({ order, handleRemoveOrder }) => {
   return (
     <Wrapper>
-      <RemoveButton onClick={() => handleRemoveOrder(order.id)} ><RiDeleteBinLine/></RemoveButton>
+      <RemoveButton onClick={() => handleRemoveOrder(order.id)}>
+        <RiDeleteBinLine />
+      </RemoveButton>
       <Image src={order.image} />
       <Name>{order.name}</Name>
       <Option>{order.option}</Option>
