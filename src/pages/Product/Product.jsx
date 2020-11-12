@@ -91,7 +91,10 @@ const Product = ({
                     </OptionsList>
                   </>
                 )}
-                <SubTitle>Quantidade ({item.unit})</SubTitle>
+                <SubTitle>
+                  Quantidade ({item.unit}
+                  )
+</SubTitle>
                 <Counter quantity={quantity} handleQuantity={handleQuantity} />
                 <SubTitle>Observação</SubTitle>
                 <TextArea
@@ -105,7 +108,10 @@ const Product = ({
                   <InputError>{errors.obs}</InputError>
                 )}
                 <Button onClick={handleSubmit} type="submit">
-                  <TotalPrice>R$ {totalPrice.toFixed(2)}</TotalPrice>
+                  <TotalPrice>
+                    R$
+                    {totalPrice.toFixed(2)}
+                  </TotalPrice>
                   Adicionar
                 </Button>
               </Form>

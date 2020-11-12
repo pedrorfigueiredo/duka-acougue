@@ -16,19 +16,34 @@ const Summary = ({ semiTotal, orders, tax, total }) => {
       <Title>Resumo do Pedido</Title>
       <Row>
         {orders.length > 1 ? (
-          <Items>{orders.length} itens</Items>
+          <Items>{orders.length}
+{' '}
+itens
+</Items>
         ) : (
-          <Items>{orders.length} item</Items>
+          <Items>{orders.length}
+{' '}
+item
+</Items>
         )}
-        <MiniPrice>R$ {semiTotal.toFixed(2)}</MiniPrice>
+        <MiniPrice>
+          R$
+          {semiTotal.toFixed(2)}
+        </MiniPrice>
       </Row>
       <Row>
         frete
-        <MiniPrice>R$ {tax.toFixed(2)}</MiniPrice>
+        <MiniPrice>
+          R$
+          {tax.toFixed(2)}
+        </MiniPrice>
       </Row>
       <Row>
         <Label>Total</Label>
-        <Price>R$ {(semiTotal + total).toFixed(2)}</Price>
+        <Price>
+          R$
+          {(semiTotal + total).toFixed(2)}
+        </Price>
       </Row>
       <Button>Continuar</Button>
     </Wrapper>

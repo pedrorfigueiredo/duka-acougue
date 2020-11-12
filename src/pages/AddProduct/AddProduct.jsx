@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Loader from '../../components/Loader';
 import Message from './Message';
 import {
@@ -131,7 +130,7 @@ const AddProduct = ({
                 <Label>Opções de Preparo (opcional)</Label>
                 {values.options.length > 0 &&
                   values.options.map((option, index) => (
-                    <OptionGroup key={index}>
+                    <OptionGroup key={Math.random()}>
                       <OptionInput
                         name={`options.${index}`}
                         type="text"
@@ -176,20 +175,6 @@ const AddProduct = ({
       }
     </Wrapper>
   );
-};
-
-AddProduct.propTypes = {
-  values: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired,
-  touched: PropTypes.object.isRequired,
-  handleChange: PropTypes.func.isRequired,
-  handleImageChange: PropTypes.func.isRequired,
-  handleAddOption: PropTypes.func.isRequired,
-  handleDeleteOption: PropTypes.func.isRequired,
-  handleReturn: PropTypes.func.isRequired,
-  handleBlur: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
-  status: PropTypes.string.isRequired,
 };
 
 export default AddProduct;

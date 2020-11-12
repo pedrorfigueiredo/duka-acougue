@@ -18,7 +18,10 @@ const ItemCard = ({ item }) => {
         <Description>
           {`${item.description.replace(/^(.{50}[^\s]*).*/, '$1')}...`}
         </Description>
-        <Price>R$ {item.price.toFixed(2)}</Price>
+        <Price>
+          R$
+          {item.price.toFixed(2)}
+        </Price>
       </Info>
       <ImageContainer>
         <Image src={item.image.url} />
@@ -28,7 +31,7 @@ const ItemCard = ({ item }) => {
 };
 
 ItemCard.propTypes = {
-  item: PropTypes.object.isRequired,
+  item: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
 export default ItemCard;

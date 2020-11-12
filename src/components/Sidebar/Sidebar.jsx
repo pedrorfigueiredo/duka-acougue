@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Wrapper, Nav, HeadItem, Item, Panel } from './styles';
 
 const Sidebar = ({ handleCloseSidebar }) => {
@@ -30,6 +31,10 @@ const Sidebar = ({ handleCloseSidebar }) => {
       </Nav>
     </Wrapper>
   );
+};
+
+Sidebar.propTypes = {
+  handleCloseSidebar: PropTypes.func.isRequired,
 };
 
 export default Sidebar;

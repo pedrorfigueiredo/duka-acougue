@@ -14,7 +14,7 @@ const ItemGrid = ({ items }) => {
 };
 
 ItemGrid.propTypes = {
-  items: PropTypes.array.isRequired,
+  items: PropTypes.arrayOf(PropTypes.array).isRequired,
 };
 
 export default ItemGrid;

@@ -22,7 +22,10 @@ const Order = ({ order, handleRemoveOrder }) => {
       <Quantity>
         {order.quantity.toFixed(2)} {order.unit}
       </Quantity>
-      <Price>R$ {order.totalPrice.toFixed(2)}</Price>
+      <Price>
+        R$
+        {order.totalPrice.toFixed(2)}
+      </Price>
     </Wrapper>
   );
 };

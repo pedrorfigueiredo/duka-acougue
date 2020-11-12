@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { BiCart } from 'react-icons/bi';
 import { FiMenu } from 'react-icons/fi';
@@ -12,7 +13,7 @@ import {
   Counter,
 } from './styles';
 
-const Header = ({ handleOpenSidebar }) => {
+function Header({ handleOpenSidebar }) {
   const orders = useSelector((state) => state.shopCart.orders);
 
   return (
@@ -34,6 +35,10 @@ const Header = ({ handleOpenSidebar }) => {
       </ItemList>
     </Wrapper>
   );
+}
+
+Header.propTypes = {
+  handleOpenSidebar: PropTypes.func.isRequired,
 };
 
 export default Header;

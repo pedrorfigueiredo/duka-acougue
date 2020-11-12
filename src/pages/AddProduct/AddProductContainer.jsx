@@ -26,13 +26,13 @@ const AddProductContainer = () => {
   const handleSubmit = async (values) => {
     setStatus('LOADING');
     const formData = new FormData();
-    formData.append('name', formik.values.name);
-    formData.append('category', formik.values.category);
-    formData.append('description', formik.values.description);
-    formData.append('price', formik.values.price);
-    formData.append('unit', formik.values.unit);
-    formData.append('image', formik.values.image);
-    formData.append('options', JSON.stringify(formik.values.options));
+    formData.append('name', values.name);
+    formData.append('category', values.category);
+    formData.append('description', values.description);
+    formData.append('price', values.price);
+    formData.append('unit', values.unit);
+    formData.append('image', values.image);
+    formData.append('options', JSON.stringify(values.options));
     try {
       const response = await fetch(
         `${process.env.REACT_APP_BACKEND_URL}/items`,
@@ -49,27 +49,6 @@ const AddProductContainer = () => {
       setStatus('ERROR');
     }
     formik.resetForm();
-  };
-
-  const handleImageChange = (event) => {
-    formik.setFieldValue('image', event.currentTarget.files[0]);
-  };
-
-  const handleAddOption = () => {
-    const newOptions = [...formik.values.options, ''];
-    formik.setFieldValue('options', newOptions);
-  };
-
-  const handleDeleteOption = () => {
-    const newOptions = formik.values.options.slice(
-      0,
-      formik.values.options.length - 1
-    );
-    formik.setFieldValue('options', newOptions);
-  };
-
-  const handleReturn = () => {
-    setStatus('READY');
   };
 
   const formik = useFormik({
@@ -92,6 +71,27 @@ const AddProductContainer = () => {
     validationSchema,
     onSubmit: handleSubmit,
   });
+
+  const handleImageChange = (event) => {
+    formik.setFieldValue('image', event.currentTarget.files[0]);
+  };
+
+  const handleAddOption = () => {
+    const newOptions = [...formik.values.options, ''];
+    formik.setFieldValue('options', newOptions);
+  };
+
+  const handleDeleteOption = () => {
+    const newOptions = formik.values.options.slice(
+      0,
+      formik.values.options.length - 1
+    );
+    formik.setFieldValue('options', newOptions);
+  };
+
+  const handleReturn = () => {
+    setStatus('READY');
+  };
 
   return (
     <AddProduct
