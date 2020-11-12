@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { Wrapper, Header, Title } from './styles';
 import { Error } from '../../components/styles';
@@ -22,11 +21,6 @@ const Category = ({ status, items, title }) => {
       }
     </Wrapper>
   );
-};
-
-Category.propTypes = {
-  status: PropTypes.string.isRequired,
-  items: PropTypes.array.isRequired,
 };
 
 export default Category;

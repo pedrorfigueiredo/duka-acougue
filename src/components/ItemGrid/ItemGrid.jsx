@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import ItemCard from './ItemCard/ItemCard';
 import { Wrapper } from './styles';
 
@@ -11,10 +10,6 @@ const ItemGrid = ({ items }) => {
       ))}
     </Wrapper>
   );
-};
-
-ItemGrid.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.array).isRequired,
 };
 
 export default ItemGrid;

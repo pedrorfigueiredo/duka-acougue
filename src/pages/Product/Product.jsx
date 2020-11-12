@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { BsArrowReturnLeft } from 'react-icons/bs';
 import { RiDeleteBinLine, RiEdit2Line } from 'react-icons/ri';
 import Loader from '../../components/Loader';
@@ -91,10 +90,7 @@ const Product = ({
                     </OptionsList>
                   </>
                 )}
-                <SubTitle>
-                  Quantidade ({item.unit}
-                  )
-</SubTitle>
+                <SubTitle>Quantidade ({item.unit})</SubTitle>
                 <Counter quantity={quantity} handleQuantity={handleQuantity} />
                 <SubTitle>Observação</SubTitle>
                 <TextArea
@@ -121,21 +117,6 @@ const Product = ({
       }
     </Wrapper>
   );
-};
-
-Product.propTypes = {
-  status: PropTypes.string.isRequired,
-  values: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired,
-  touched: PropTypes.object.isRequired,
-  handleChange: PropTypes.func.isRequired,
-  handleBlur: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
-  quantity: PropTypes.number.isRequired,
-  handleQuantity: PropTypes.func.isRequired,
-  totalPrice: PropTypes.number.isRequired,
-  handleDelete: PropTypes.func.isRequired,
-  handleReturn: PropTypes.func.isRequired,
 };
 
 export default Product;

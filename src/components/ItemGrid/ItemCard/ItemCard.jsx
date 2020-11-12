@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   Wrapper,
   Info,
@@ -28,10 +27,6 @@ const ItemCard = ({ item }) => {
       </ImageContainer>
     </Wrapper>
   );
-};
-
-ItemCard.propTypes = {
-  item: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
 export default ItemCard;

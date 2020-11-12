@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { Wrapper, Header, Title, Subtitle } from './styles';
 import { Error } from '../../components/styles';
@@ -25,11 +24,6 @@ const Main = ({ status, items }) => {
       }
     </Wrapper>
   );
-};
-
-Main.propTypes = {
-  status: PropTypes.string.isRequired,
-  items: PropTypes.array.isRequired,
 };
 
 export default Main;

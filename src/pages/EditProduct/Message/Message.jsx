@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Wrapper, Card, Text, Button } from './styles';
 
 const Message = ({ children, handleReturn }) => {
@@ -11,11 +10,6 @@ const Message = ({ children, handleReturn }) => {
       </Card>
     </Wrapper>
   );
-};
-
-Message.propTypes = {
-  children: PropTypes.node.isRequired,
-  handleReturn: PropTypes.func.isRequired,
 };
 
 export default Message;
